@@ -1,0 +1,36 @@
+# DEFAULT SPRING PROFILE
+
+# 1) Inject into Code with ==> @Value("${}}" or @Value("#{${}})
+# ----------------------------------------------------------------
+my:
+  greeting: Hello World
+  list:
+    values: One,Two,Three
+
+dbValues: "{connectionString: 'http://___', userName: 'foo default', password: 'pass default'}"
+
+# 1.1) Using within Same Property File
+# --------------------------------------
+app:
+  name: My App
+  description: Welcome to ${app.name}
+
+
+# 2) Inject into Code with @ConfigurationProperties
+# ---------------------------------------------------
+db:
+  #connection: "{connectionString: 'http://___', userName: 'foo', password: 'pass'}"
+  connection: default-connection-string
+  host: 127.0.0.1
+  port: 1200
+  values: default value
+
+
+# 3) New Spring Profile ... [application-<profileName>.ext]
+# -----------------------------------------------------------
+#spring.profiles.active: test
+
+server:
+  port: 8081
+
+

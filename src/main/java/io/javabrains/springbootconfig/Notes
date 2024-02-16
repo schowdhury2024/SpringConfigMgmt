@@ -1,0 +1,26 @@
+application.properties :
+==============================
+
+# 1) Inject into Code with ==> @Value("${}}" or @Value("#{${}})
+# ----------------------------------------------------------------
+my.greeting=Hello World
+my.list.values=One,Two,Three
+dbValues={connectionString: 'http://___', userName: 'foo', password: 'pass'}
+
+# 1.1) Using within Same Property File
+# --------------------------------------
+app.name=My App
+app.description=Welcome to ${app.name}
+
+
+# 2) Inject into Code with @ConfigurationProperties
+# ---------------------------------------------------
+db.connection={connectionString: 'http://___', userName: 'foo', password: 'pass'}
+db.host=127.0.0.1
+db.port=1200
+
+# 3) Expose All End-Points which Actuator provides:
+# ----------------------------------------------------
+management.endpoints.web.exposure.include=*
+
+*****************************************************************************************

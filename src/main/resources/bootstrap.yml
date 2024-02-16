@@ -1,0 +1,21 @@
+# 1) Location of Spring Cloud Configuration Server:
+# ----------------------------------------------------
+spring.cloud.config.uri: http://localhost:8888/
+
+# 2) Name of this Microservice ==> So it can get this Microservice related properties from Spring Cloud Config Server
+# --------------------------------------------------------------------------------------------------------------------
+# Spring Cloud Config Server ==> Connects to a Repo (Local/GIT etc) ==> which has a File: spring-boot-config.yml
+spring.application.name: spring-boot-config
+
+# 3) Disable Spring Security
+# ----------------------------
+management.security.enabled: false
+
+# 4) Enable Actuator Endpoints :
+# -------------------------------
+endpoints.actuator.enabled: true
+
+
+# 5) Expose All End-Points which Actuator provides:
+# ----------------------------------------------------
+management.endpoints.web.exposure.include: "*"

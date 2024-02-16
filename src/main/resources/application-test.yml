@@ -1,0 +1,27 @@
+# New Spring Profile
+
+# 1) Inject into Code with ==> @Value("${}}" or @Value("#{${}})
+# ----------------------------------------------------------------
+my:
+  greeting: Hello World
+  list.values: One,Two,Three
+
+# dbValues: "{connectionString: 'http://___', userName: 'foo', password: 'pass'}"
+
+# 1.1) Using within Same Property File
+# --------------------------------------
+app:
+  name: My App
+  description: Welcome to ${app.name}
+
+
+# 2) Inject into Code with @ConfigurationProperties
+# ---------------------------------------------------
+db:
+  connection: test-connection-string-here
+  host: 127.0.0.1
+  port: 2400
+
+# 3) Expose All End-Points which Actuator provides:
+# ----------------------------------------------------
+management.endpoints.web.exposure.include: "*"
